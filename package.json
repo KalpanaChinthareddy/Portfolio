@@ -1,0 +1,30 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "aliased": "^1.0.0",
+    "next": "15.1.7",
+    "next-themes": "^0.4.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-simple-typewriter": "^5.0.1",
+    "react-typing-effect": "^2.0.5"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/react": "^19.0.10",
+    "@types/react-typing-effect": "^2.0.7",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.7",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
