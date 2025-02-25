@@ -7,7 +7,7 @@ import { SiGmail,SiLeetcode } from "react-icons/si";
 
 export default function AboutMe(){
     return(
-    <div className="flex bg-white dark:bg-black text-black dark:text-white py-5" id="about">
+    <div className="flex bg-white dark:bg-black text-black dark:text-white py-5 flex-col md:flex-row items-center justify-center" id="about">
       <div className="container mx-auto px-8 md:px-16 lg:px-24 py-10 basis-1/2">
         <img src={profilepic.src} className="mx-auto mb-5 w-52 h-52 rounded-full overflow-hidden shadow-lg hover:scale-105 transition-transform"/>
         <h1 className="text-2xl font-bold text-center "><Typewriter
