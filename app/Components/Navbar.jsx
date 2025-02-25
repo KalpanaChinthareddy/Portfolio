@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react"; // Icons for menu toggle
+import { Menu, X } from "lucide-react"; 
 import ThemeToggle from "./ThemeToggle";
 
 export default function NavBar() {
