@@ -1,51 +1,81 @@
-"use client";
-import { FaPython, FaJava, FaDatabase, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaJenkins, FaFlask } from "react-icons/fa";
-import { SiMysql, SiMongodb, SiNextdotjs, SiJavascript, SiSelenium, SiTestinglibrary } from "react-icons/si";
-import { VscVscode } from "react-icons/vsc";
-import { TbBinaryTree } from "react-icons/tb";
+import aicte from "@/app/assets/aicte.png";
+import smart_interviews from "@/app/assets/smart_interviews.png";
+import internshala from "@/app/assets/internshala.png";
+import michigan from "@/app/assets/michigan.png";
 
-export default function Skills(){
-    const skills = [
-        { id: 1, name: "Python", proficiency: 90, icon: <FaPython /> },
-        { id: 2, name: "Java", proficiency: 80, icon: <FaJava /> },
-        { id: 3, name: "SQL", proficiency: 85, icon: <FaDatabase /> },
-        { id: 4, name: "Data Structures", proficiency: 85, icon: <TbBinaryTree /> },
-        { id: 5, name: "Algorithms", proficiency: 80, icon: <TbBinaryTree /> },
-        { id: 6, name: "Javascript", proficiency: 80, icon: <SiJavascript /> },
-        { id: 7, name: "HTML/CSS", proficiency: 85, icon: [<FaHtml5 />,<FaCss3Alt/>] },
-        { id: 8, name: "MySQL", proficiency: 80, icon: <SiMysql /> },
-        { id: 9, name: "React", proficiency: 80, icon: <FaReact /> },
-        { id: 10, name: "Flask", proficiency: 70, icon: <FaFlask /> },
-        { id: 11, name: "Node.js", proficiency: 75, icon: <FaNodeJs /> },
-        { id: 12, name: "Next.js", proficiency: 80, icon: <SiNextdotjs /> },
-        { id: 13, name: "MongoDB", proficiency: 70, icon: <SiMongodb /> },
-        { id: 14, name: "VS Code", proficiency: 85, icon: <VscVscode /> },
-        { id: 15, name: "Selenium", proficiency: 85, icon: <SiSelenium /> },
-        { id: 16, name: "Jenkins(CI/CD)", proficiency: 65, icon: <FaJenkins /> },
-        { id: 17, name: "Automation Testing", proficiency: 70, icon: <SiTestinglibrary /> },
+export default function Certifications(){
+    const certifications =[
+        {
+            id:1,
+            name:"Smart Coder(Data Structures and Algorithms)",
+            organization:"Smart Interviews",
+            skills:"Data Structures, Algorithms",
+            image:smart_interviews
+        },
+        {
+            id:2,
+            name:"AWS Cloud Virtual Internship",
+            organization:"AICTE",
+            skills:"AWS Cloud",
+            image:aicte
+        },
+        {
+            id:3,
+            name:"AI-ML Virtual Internship",
+            organization:"AICTE",
+            skills:"Machine Learning",
+            image:aicte
+        },
+        {
+            id:4,
+            name:"Python Programming",
+            organization:"Internshala",
+            skills:"Python",
+            image:internshala
+        },
+        {
+            id:5,
+            name:"Introduction to HTML5",
+            organization:"University of Michigan",
+            skills:"HTML",
+            image:michigan
+        },
+        {
+            id:6,
+            name:"Introduction to CSS3",
+            organization:"University of Michigan",
+            skills:"CSS",
+            image:michigan
+        },
     ];
-    
     return(
-    <div className="bg-white dark:bg-black text-black dark:text-white py-10" id="skills">
-        <div className="container mx-auto px-8 md:px-16 lg:px-24 py-10">
-        <h2 className="text-4xl font-bold text-center mb-12">My Skills</h2>
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-5">
-            {skills.map((skill) => (
-                <div key={skill.id} className="flex items-center space-x-3 p-3 bg-gray-100 dark:bg-gray-800 hover:shadow-lg transform transition-transform duration-300 hover:scale-105">
-                    <span className="text-2xl">{skill.icon}</span>
-                    <p className="text-lg">{skill.name}</p>
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full">
-                        <div 
-                            className="h-2 bg-gradient-to-r from-blue-900 dark:from-blue-500 to-purple-400 dark:to-purple-200 rounded-full transition-all" 
-                            style={{ width: `${skill.proficiency}%` }}
-                        ></div>
+        <div className="bg-white dark:bg-black text-black dark:text-white py-10" id="certifications">
+            <div className="container mx-auto px-8 md:px-16 lg:px-24 py-10">
+                <h2 className="text-4xl font-bold text-center mb-12">My Certifications</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {certifications.map((cert) => (
+                    <div
+                        key={cert.id}
+                        className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg hover:shadow-lg transform 
+                        transition-transform duration-300 hover:scale-105 flex space-x-6"
+                    >
+                        <img
+                        src={cert.image.src}
+                        alt={cert.organization}
+                        className="w-16 h-16 object-cover rounded-full"
+                        />
+                        <div>
+                            <h3 className="text-2xl font-bold text-green-500">
+                            {cert.organization}
+                            </h3>
+                            <p className="text-gray-700 dark:text-gray-300 font-semibold">{cert.name}</p>
+                            <p className="text-gray-800 dark:text-gray-200 ">Skills Earned: {cert.skills}</p>  
+                        </div>
+                        
                     </div>
-                    <p className="text-right text-sm text-gray-600 dark:text-gray-400 mt-1">{skill.proficiency}%</p>
+                    ))}
                 </div>
-            ))}
+            </div>
         </div>
-        </div>
-    </div>
     );
-
 }
