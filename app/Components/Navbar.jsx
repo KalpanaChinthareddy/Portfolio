@@ -1,26 +1,36 @@
-"use client"
-import Link from 'next/link';
-import ThemeToggle from './ThemeToggle';
+"use client";
+import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
-export default function NavBar(){
- return(
-    <nav className="flex items-center justify-between p-4 text-black dark:text-white">
-    <div className="text-lg font-bold">
-    <a href="/">Kalpana Chinthareddy</a>
-    </div>
-    <ul className="flex space-x-8">
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#contact">ContactMe!</a></li>
-      <li><ThemeToggle/></li>
-    </ul>
-  </nav>
- );
-
-
+export default function NavBar() {
+  return (
+    <nav className="flex flex-wrap items-center justify-between p-4 text-black dark:text-white bg-gray-100 dark:bg-gray-900">
+      <div className="text-lg font-bold">
+        <Link href="/">
+          <span className="cursor-pointer">Kalpana Chinthareddy</span>
+        </Link>
+      </div>
+      <ul className="hidden md:flex space-x-6">
+        {[
+          "about",
+          "education",
+          "experience",
+          "projects",
+          "skills",
+          "certifications",
+          "achievements",
+          "contact",
+        ].map((section) => (
+          <li key={section}>
+            <Link href={`#${section}`} className="hover:text-blue-500">
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </Link>
+          </li>
+        ))}
+        <li>
+          <ThemeToggle />
+        </li>
+      </ul>
+    </nav>
+  );
 }
