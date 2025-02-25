@@ -6,7 +6,7 @@ export default function Projects(){
             id:1,
             name:"Portfolio",
             skills:"NextJs, Node.js, Tailwind CSS",
-            github:"https://github.com/KalpanaChinthareddy/Task_tracker_communication",
+            github:"https://github.com/KalpanaChinthareddy/Portfolio",
             image:portfolio
         },
         {
